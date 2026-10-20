@@ -72,6 +72,17 @@ class ContinenteRoundButton extends StatelessWidget {
     // Para darle estilo al texto, puedes utilizar: style: Theme.of(context).textTheme.displayMedium,
     // (en el Main, hemos definido ya un estilo personalizado para la aplicación, por tanto, de aquí hacemos referencia a ese tema)
 
-    return const Placeholder();
+  
+
+
+
+    return     CircleAvatar(
+    backgroundImage: NetworkImage(imagen),
+    radius: 110,
+    child: Text(
+      nombre,
+      style: Theme.of(context).textTheme.displayMedium),
+
+    );
   }
 }

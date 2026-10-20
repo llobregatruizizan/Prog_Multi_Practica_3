@@ -19,13 +19,26 @@ class PaisesScreen extends StatelessWidget {
     );
   }
 
-  Widget _creaListaPaises(List<Pais> paises) {
+  Widget? _creaListaPaises(List<Pais> paises) {
     // Recibimos la lista de paises
     
     // TO-DO
     // Debemos utilizar un ListView.builder para recorrer la lista de países
     // y generar un widget personalizado de tipo PaisCard, con la imagen y el nombre.
-    return const Placeholder();
+         
+
+  // Recorremos la lista de continentes
+  
+  ListView.builder(itemCount: paises.length,
+                   itemBuilder: (context, index){
+                      return PaisCard(
+                        nombre: paises[index].nombre,
+                        imagen: paises[index].imagen ?? "");
+                },
+            );
+
+  
+    return Placeholder();
   }
 }
 
