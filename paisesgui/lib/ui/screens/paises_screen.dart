@@ -29,16 +29,16 @@ class PaisesScreen extends StatelessWidget {
 
   // Recorremos la lista de continentes
   
-  ListView.builder(itemCount: paises.length,
+
+
+  
+    return   ListView.builder(itemCount: paises.length,
                    itemBuilder: (context, index){
                       return PaisCard(
                         nombre: paises[index].nombre,
                         imagen: paises[index].imagen ?? "");
                 },
             );
-
-  
-    return Placeholder();
   }
 }
 
@@ -60,6 +60,27 @@ class PaisCard extends StatelessWidget {
     // Devuelve un widget de tipo Card, con el diseño que desees, pero
     // que muestre la imagen  (obtenida de Internet a partir de la url)
     // y el nombre del país.
-    return const Placeholder();
+
+
+     //border radius: se pone en el card
+    return Card (
+      
+      clipBehavior: Clip.antiAlias, // Sirve para que la expansion de las imagenes no afecte al borderRadius
+          shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+       child: Stack(
+      children: [Image.network( imagen,
+                                height: 200,
+                                width: double.infinity, // Para que la imagen ocupe el ancho disponible de su contenedor.
+                                fit: BoxFit.cover,
+                              ),
+                 Positioned(bottom: 20,
+                            left: 30,
+                            child: Text(nombre,
+                            style: Theme.of(context).textTheme.displayMedium,),)
+                      ],
+      )
+    );
   }
 }

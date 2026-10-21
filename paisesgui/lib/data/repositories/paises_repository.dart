@@ -47,10 +47,10 @@ class PaisesRepository {
   // TO-DO:
   // Implementar el método getPaises
   List<Pais> getPaises(){
- //   return (await api.getPaises(continente)).map((pais) {
- //     return Pais.fromJSON(pais);
- //   }).toList();
-    return [];
+    return (api.getPaises()).map((pais) {
+      return Pais.fromJSON(pais);
+    }).toList();
+    
   }    
 
   // TO-DO:

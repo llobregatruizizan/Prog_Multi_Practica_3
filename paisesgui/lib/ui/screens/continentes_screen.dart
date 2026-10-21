@@ -76,7 +76,7 @@ class ContinenteRoundButton extends StatelessWidget {
 
 
 
-    return     CircleAvatar(
+    return CircleAvatar(
     backgroundImage: NetworkImage(imagen),
     radius: 110,
     child: Text(
