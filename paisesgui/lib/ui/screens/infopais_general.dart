@@ -24,6 +24,67 @@ class InfoPaisGeneral extends StatelessWidget {
     // Debéis tener en cuenta no sobrepasar los límites y dibujar fuera del espacio disponible
     // Para comprobar que no os salís, podéis probar a girar el dispositivo (si lo estáis haciendo sobre Android)
 
-    return const Placeholder();
+    return Scaffold(
+           
+            body: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Imagen del país
+                  Padding(padding: const EdgeInsets.all(20.0),
+                                    
+                          child: 
+                                Image.network(
+                                pais.imagen ?? "",
+                                width: double.infinity,
+                                height: 250,
+                                fit: BoxFit.cover,
+                                ),
+                          ),
+
+
+                  // Nombre del país
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                    child: Text(
+                      style: const TextStyle(fontSize: 25),
+                      pais.nombre,
+                    ),
+                  ),
+
+
+                  // Capital
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                    child: Row(
+                      children: [
+                        const Text(
+                          "Capital: ",
+                          style: const TextStyle(fontSize: 16),
+
+                        ),
+                        Expanded(
+                          child: Text(pais.capital ?? "No disponible",
+                                      style: const TextStyle(fontSize: 16)
+                                      ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+
+                  // Descripción
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 28),
+                    child: Text(
+                      style: const TextStyle(fontSize: 12),
+                      pais.descripcion ?? "Sin descripción disponible",
+                      textAlign: TextAlign.justify,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
   }
 }

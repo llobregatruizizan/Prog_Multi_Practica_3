@@ -55,16 +55,14 @@ class PaisesRepository {
 
   // TO-DO:
   // Implementar el método infoPais
-Pais infoPais() {
- //       var paisJSON;
- //   paisJSON = api.infoPais();
- //   if (paisJSON == null)
- //   {
- //     return null;
- //   }
- //   Pais pais = Pais.fromJSON(paisJSON);
- //     return pais;
-    return Pais(nombre: 'Sin implementar');
+
+
+    Pais infoPais() {
+      var paisJSON;
+      paisJSON = api.infoPais();
+      Pais pais = Pais.fromJSON(paisJSON);
+        return pais;
+   }
  }
 
-}
+

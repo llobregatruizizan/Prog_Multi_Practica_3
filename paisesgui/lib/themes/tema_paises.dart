@@ -14,5 +14,12 @@ ThemeData temaPaises = ThemeData(
           fontSize: 40,
           shadows: [
             Shadow(offset: Offset(2, 2), color: Colors.black, blurRadius: 3),
-          ])),
+          ]),
+      displaySmall: TextStyle(
+          fontWeight: FontWeight.w300,
+          color: Color.fromARGB(255, 0, 0, 0),
+          fontFamily: "LeckerliOne",
+          fontSize: 12,
+         )),
+      
 );
