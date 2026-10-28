@@ -35,7 +35,7 @@ class InfoPaisDetalle extends StatelessWidget {
     child: Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           
           
@@ -53,12 +53,13 @@ class InfoPaisDetalle extends StatelessWidget {
           Row(
             children: [
               const SizedBox(width: 10),
-              const Text(
-                "Población: ",
+              const SizedBox(
+                width: 200,
+                child: Text("          Población:"),
               ),
               Expanded(
                 child: Text(
-                  "${pais.poblacion ?? 'No disponible'} habitantes",
+                  "${pais.poblacion ?? 'No disponible'}",
                 ),
               ),
             ],
@@ -68,8 +69,9 @@ class InfoPaisDetalle extends StatelessWidget {
           Row(
             children: [
               const SizedBox(width: 10),
-              const Text(
-                "Latitud: ",
+               const SizedBox(
+                width: 200,
+                child: Text("          Latitud:"),
               ),
               Text("${pais.latitud ?? 'No disponible'}°"),
             ],
@@ -79,8 +81,9 @@ class InfoPaisDetalle extends StatelessWidget {
           Row(
             children: [
               const SizedBox(width: 10),
-              const Text(
-                "Longitud:",
+               const SizedBox(
+                width: 200,
+                child: Text("          Longitud:"),
               ),
               Text("${pais.longitud ?? 'No disponible'}°"),
             ],
